@@ -51,6 +51,9 @@
   font-family: VideoJS;
   font-weight: normal;
   font-style: normal; }
+.avplayer-js .avs-volume-menu-button.avs-vol-0 .avs-menu {
+  display: none;
+}
   .avs-icon-volume-mute:before, .avplayer-js .avs-mute-control.avs-vol-0:before,
   .avplayer-js .avs-volume-menu-button.avs-vol-0:before {
     content: "\f104"; }
@@ -369,8 +372,10 @@ body.avs-full-window {
   width: 3em;
   display: block;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 50%;
+  left: 50%;
+  margin-left: -45px;
+  margin-top: -23px;
   padding: 0;
   cursor: pointer;
   opacity: 1;
@@ -383,7 +388,10 @@ body.avs-full-window {
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
   -o-transition: all 0.4s;
-  transition: all 0.4s; }
+  transition: all 0.4s;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%; }
 
 .avs-big-play-centered .avs-big-play-button {
   top: 50%;
@@ -518,6 +526,11 @@ body.avs-full-window {
 .avplayer-js .avs-menu-button-inline.avs-slider-active,
 .avplayer-js.avs-no-flex .avs-menu-button-inline {
   width: 12em; }
+
+.avplayer-js .avs-menu-button-inline.avs-vol-0:hover,
+.avplayer-js .avs-menu-button-inline.avs-vol-0:focus {
+  width: 4em; }
+
 
 .avplayer-js .avs-menu-button-inline.avs-slider-active {
   -webkit-transition: none;
@@ -818,6 +831,10 @@ body.avs-full-window {
   -webkit-flex: none;
   -ms-flex: none;
   flex: none; }
+
+.avplayer-js .avs-volume-menu-button .avs-menu-content {
+  cursor: default;
+}
 
 .avplayer-js .avs-volume-control {
   width: 5em;
