@@ -1,0 +1,400 @@
+1
+00:0:00 --> 00:0:05
+Dear friends, welcome to a spoken tutorial on the Linux Operating System.
+
+2
+00:0:05 --> 00:0:10
+In this tutorial, we will study some basic commands.
+
+3
+00:0:10 --> 00:0:12
+I am using Ubuntu 10.04.
+
+4
+00:0:12 --> 00:0:17
+We assume that you know how to get started with the Linux operating system.
+
+5
+00:0:17 --> 00:0:26
+If you are interested, it is available through another spoken tutorial, on the website http://spoken-tutorial.org.
+
+6
+00:0:26 --> 00:0:33
+In this tutorial, we will see what are commands and what is a command interpreter.
+
+7
+00:0:33 --> 00:0:39
+Then we will learn about how to find help in Linux using the man command.
+
+8
+00:0:39 --> 00:0:43
+Now the first question is, "what are commands?".
+
+9
+00:0:43 --> 00:0:52
+In simplest terms we can say that Linux commands are words that when keyed in cause some actions to take place.
+
+10
+00:0:52 --> 00:0:59
+Linux commands are seldom more than four character in length like ls, who, ps etc.
+
+11
+00:0:59 --> 00:1:05
+The commands are in lower case and they are case sensitive. Let us see an example .
+
+12
+00:1:05 --> 00:1:08
+Go to the applications menu.
+
+13
+00:1:08 --> 00:1:14
+Select accessories and then click on terminal from the available options
+
+14
+00:1:14 --> 00:1:20
+or press ctrl alt t on your keyboard to open a terminal window.
+
+15
+00:1:20 --> 00:1:29
+Now we can see a prompt ($) and a cursor blinking next to it. This is where we need to type in a command.
+
+16
+00:1:29 --> 00:1:34
+Type in the words who and press enter.
+
+17
+00:1:34 --> 00:1:47
+We can see the name of the users logged in. Actually we have just executed a command called who which shows who are logged into the system.
+
+18
+00:1:47 --> 00:1:54
+But which entity is converting these commands which are nothing more than a few letters into actions?
+
+19
+00:1:54 --> 00:1:59
+This is the job of the Command Interpreter, also called the shell.
+
+20
+00:1:59 --> 00:2:08
+We can define a shell as a program that acts as the interface between us and the Linux system,
+
+21
+00:2:08 --> 00:2:13
+allowing us to enter commands for the operating system to execute.
+
+22
+00:2:13 --> 00:2:22
+On Linux it’s quite feasible to have multiple shells installed, with different users able to pick the one they prefer.
+
+23
+00:2:22 --> 00:2:35
+On Linux, the standard shell that is always installed as /bin/sh is called bash, the GNU Bourne-Again SHell, from the GNU suite of tools.
+
+24
+00:2:35 --> 00:2:44
+The commands we would be covering in this tutorial are generic and can run on most of the Linux shells with slight variations.
+
+25
+00:2:44 --> 00:2:51
+Nevertheless, we would be using the bash as the shell for demonstration in this tutorial.
+
+26
+00:2:51 --> 00:2:58
+It is because bash is the most popular shell and portable to almost all UNIX.
+
+27
+00:2:58 --> 00:3:08
+Other shells include the Bourne shell which is the original Unix shell, C Shell and Korn shell
+
+28
+00:3:08 --> 00:3:11
+To see which shell we are using
+
+29
+00:3:11 --> 00:3:27
+go to the terminal and type the command echo space dollar in capital SHELL and press enter
+
+30
+00:3:27 --> 00:3:34
+Normally the output is /bin/bash which gives us the bash shell.
+
+31
+00:3:34 --> 00:3:42
+There are ways by which we can activate different shells. Those will be covered in an advanced tutorial.
+
+32
+00:3:42 --> 00:3:47
+Commands are actually files containing programs, often written in C.
+
+33
+00:3:47 --> 00:3:55
+These files are contained in directories. To find out where a command is stored, we can use the type command.
+
+34
+00:3:55 --> 00:4:03
+Type at the command prompt. Type--space-- ps and press enter.
+
+35
+00:4:03 --> 00:4:09
+This shows that ps is actually a file stored in the /bin directory.
+
+36
+00:4:09 --> 00:4:18
+When we key in a command at the command prompt, the shell searches for a file matching the command name in a list of directories.
+
+37
+00:4:18 --> 00:4:27
+If it is found, then the program corresponding to that file is executed, else a “command not found” error is given.
+
+38
+00:4:27 --> 00:4:34
+The list of directories searched is specified by the PATH variable, as we will see later.
+
+39
+00:4:34 --> 00:4:44
+For now, if we want to see this list, just type the command echo space dollar PATH
+
+40
+00:4:44 --> 00:4:52
+in capital and press enter
+
+41
+00:4:52 --> 00:4:57
+Talking of commands, there is one important thing that we need to know.
+
+42
+00:4:57 --> 00:5:02
+Linux commands are of two types: External commands and internal commands.
+
+43
+00:5:02 --> 00:5:07
+Now external commands are those which exist as separate files/programs.
+
+44
+00:5:07 --> 00:5:18
+Most commands in Linux are of this nature. But there are some commands whose implementation is written within the shell and they do not exist as separate files.
+
+45
+00:5:18 --> 00:5:20
+These are internal commands.
+
+46
+00:5:20 --> 00:5:25
+The echo command, which we will see later, is in fact an internal command.
+
+47
+00:5:25 --> 00:5:33
+Go to the terminal and type at the command,
+
+48
+00:5:33 --> 00:5:40
+type space echo and press enter.
+
+49
+00:5:40 --> 00:5:43
+The output shows echo as a shell built-in.
+
+50
+00:5:43 --> 00:5:56
+So instead of giving a file name it shows that the echo command's implementation is internal to the shell. So it is called internal command.
+
+51
+00:5:56 --> 00:6:01
+Another important thing which we need to understand is the structure of commands.
+
+52
+00:6:01 --> 00:6:08
+Commands can be of one word or multiple words, separated by white spaces.
+
+53
+00:6:08 --> 00:6:16
+In the second case the first word is the actual name of the command while the other words are the arguments.
+
+54
+00:6:16 --> 00:6:20
+Arguments can be options or expressions or file names.
+
+55
+00:6:20 --> 00:6:26
+A command can perform different tasks depending on the option specified.
+
+56
+00:6:26 --> 00:6:35
+They are generally preceded by a single or double minus sign(-), called short and long option, respectively.
+
+57
+00:6:35 --> 00:6:40
+Go to the terminal window and type the commands and see their outputs.
+
+58
+00:6:40 --> 00:6:44
+Type clear to clear the terminal window
+
+59
+00:6:44 --> 00:6:49
+Then type ls and press enter
+
+60
+00:6:49 --> 00:6:55
+Again, type clear and press enter
+
+61
+00:6:55 --> 00:7:04
+Type ls space minus a and enter.
+
+62
+00:7:04 --> 00:7:11
+Type clear to clear the terminal window
+
+63
+00:7:11 --> 00:7:19
+Now type ls space minus minus all and press enter.
+
+64
+00:7:19 --> 00:7:23
+Again, type clear to clear the terminal .
+
+65
+00:7:23 --> 00:7:32
+Now type ls space minus d and press enter.
+
+66
+00:7:32 --> 00:7:40
+At this point it is enough to understand how the command's behavior changes with change of options
+
+67
+00:7:40 --> 00:7:45
+In Linux we have a larger number of commands,
+
+68
+00:7:45 --> 00:7:48
+each of which have many different options.
+
+69
+00:7:48 --> 00:7:55
+Commands can also be combined together as we will see later. So how do we keep so much in mind?
+
+70
+00:7:55 --> 00:8:01
+In reality you don't have to. This is because of the excellent online help facility available in Linux.
+
+71
+00:8:01 --> 00:8:08
+The man command provides documentation on just about every available command on the system.
+
+72
+00:8:08 --> 00:8:16
+For instance, to know about say, the ls command, all you have to do is to go to the terminal
+
+73
+00:8:16 --> 00:8:30
+and type man command with ls as argument that is type man space ls and press enter
+
+74
+00:8:30 --> 00:8:35
+Press q to come out.
+
+75
+00:8:35 --> 00:8:43
+man is the system’s manual pager. Each argument given to man is normally the name of a program, utility or function.
+
+76
+00:8:43 --> 00:8:49
+The manual page associated with each of these arguments is then found and displayed.
+
+77
+00:8:49 --> 00:8:55
+A section, if provided, will direct man to look only in that section of the manual.
+
+78
+00:8:55 --> 00:9:07
+The default is to search in all of the available sections, following a pre-defined order and to show only the first page found, even if page exists in several sections.
+
+79
+00:9:07 --> 00:9:14
+You can use man command to know more about the command man itself.
+
+80
+00:9:14 --> 00:9:23
+Go to the terminal and type man space man and press enter.
+
+81
+00:9:23 --> 00:9:26
+Press q to come out of it.
+
+82
+00:9:26 --> 00:9:30
+man command has many options.
+
+83
+00:9:30 --> 00:9:41
+Here let me tell the most useful ones. Sometimes we know what we want to do but do not know the exact command. Then what can we do?
+
+84
+00:9:41 --> 00:9:50
+man provides the -k option which takes a keyword and return a list of commands and their brief purpose.
+
+85
+00:9:50 --> 00:9:56
+For example, create a directory, we may not know the exact command,
+
+86
+00:9:56 --> 00:10:12
+so we can go to the command prompt and type man space minus k space directories and press enter.
+
+87
+00:10:12 --> 00:10:17
+Now we can search each of these commands to see what we actually need.
+
+88
+00:10:17 --> 00:10:21
+The same thing can be achieved using apropos command.
+
+89
+00:10:21 --> 00:10:36
+Type at the command prompt apropos space directories and press enter to see the output.
+
+90
+00:10:36 --> 00:10:40
+Some times we do not need too much details. We only need to know what a command does.
+
+91
+00:10:40 --> 00:10:52
+In that case we can use the whatis command or man -f. Both give one line description about the command.
+
+92
+00:10:52 --> 00:10:58
+Go to the terminal type clear to clear the terminal window
+
+93
+00:10:58 --> 00:11:06
+now type whatis space ls and press enter
+
+94
+00:11:06 --> 00:11:13
+Some commands have many options. We may want to obtain a list of the different options that a command has.
+
+95
+00:11:13 --> 00:11:18
+Then we use the minus help option.
+
+96
+00:11:18 --> 00:11:29
+Go to the command prompt and type ls space minus minus help and press enter
+
+97
+00:11:29 --> 00:11:45
+I will scroll up so that u can see all the options on this manual page
+
+98
+00:11:45 --> 00:11:56
+Thats it for this part of the Linux Spoken tutorial. Spoken Tutorials are a part of the Talk to a Teacher project, supported by the National Mission on Education through ICT.
+
+99
+00:11:56 --> 00:12:00
+More information on the same is available at the following link .
+
+100
+00:12:00 --> 00:12:00
+This script has been contributed by ----------------------(name of the translator) and this is -----------------------(name of the recorder) from --------------------------(name of the place)signing off. Good bye
+
