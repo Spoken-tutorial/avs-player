@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+	<head>
+		<title>Linux: Basic Commands - Hindi</title>
+		<link href="./src/avs.player.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="./src/jquery.js"></script>
+		<script type="text/javascript" src="./src/avs.player.js"></script>
+	</head>
+	<body>
+		<video id="video1" preload="none" width="640" height="480" poster="./media/Basic-Commands-Big.png">
+			<source src="./media/video.ogv" type="video/ogg">
+			<source src="./media/video.webm" type="video/webm">
+			<track kind="captions" src="./media/Basic-Commands-English.srt" srclang="en" label="English">
+			<track kind="captions" src="./media/Basic-Commands-Hindi.srt" srclang="en" label="Hindi">
+		</video>
+		
+		<audio id="audio1" preload="none">
+			<source src="./media/Basic-Commands-Hindi.ogg" type="audio/ogg">
+			<source src="./media/Basic-Commands-Hindi.mp3" type="audio/mp3">
+		</audio>
+	</body>
+	<script type="text/javascript">
+		(function() {
+			new syncAudioVideo('video1', 'audio1');
+		})();
+	</script>
+</html>
